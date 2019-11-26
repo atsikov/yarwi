@@ -21,6 +21,8 @@
     "not dead"
   ],
   "dependencies": {
+    "mobx": "4",
+    "mobx-preact": "2",
     "preact": "^10.0.5"
   },
   "devDependencies": {

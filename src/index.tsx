@@ -1,5 +1,6 @@
 import { h, render } from "preact";
+import { Dashboard } from "./dashboard";
 
 import "./styles/global.css";
 
-render(<div>Hello, world!</div>, document.getElementById("root")!);
+render(<Dashboard />, document.getElementById("root")!);
