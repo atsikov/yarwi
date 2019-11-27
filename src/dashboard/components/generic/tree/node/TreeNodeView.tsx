@@ -7,6 +7,8 @@ import {
     JSX,
 } from "preact";
 
+import * as styles from "./TreeNodeView.css";
+
 interface TreeNodeViewProps<T> {
     value: T;
 }
@@ -29,14 +31,16 @@ export class TreeNodeView<T> extends Component<TreeNodeViewProps<T>, TreeNodeVie
         const clickHandler = children ? this.onClick : undefined;
 
         return (
-            <Fragment>
-                <span onClick={clickHandler}>{children && this.getFolderIcon(expanded)}</span>
+            <div data-role="tree-node" className={styles.treeNode}>
+                <div onClick={clickHandler}>
+                    {children && this.getFolderIcon(expanded)}
+                </div>
                 {
                     expanded
-                        ? <div>{this.getExpandedContent(value, children)}</div>
-                        : <div>{this.getCollapsedContent(value)}</div>
+                        ? this.getExpandedContent(value, children)
+                        : this.getCollapsedContent(value)
                 }
-            </Fragment>
+            </div>
         );
     }
 

@@ -12,7 +12,7 @@ interface TreeViewProps<T> {
 
 export class TreeView<T> extends Component<TreeViewProps<T>> {
     public render() {
-        return <div>
+        return <div data-role="tree-root">
             {this.getChildren(this.props.value)}
         </div>;
     }
